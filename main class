@@ -1,0 +1,54 @@
+package employees;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String args[]) {
+
+		Admin employee1 = new Admin();
+		Developer employee2 = new Developer();
+		while (true) {
+			System.out.println("choose\n 1.Admin\n 2. Developer\n 3. Exit");
+			Scanner sc = new Scanner(System.in);
+			int choice = sc.nextInt();
+
+			switch (choice) {
+			case 1: {
+				System.out.println("please enter name and age");
+				Scanner sc1 = new Scanner(System.in);
+				String name = sc1.nextLine();
+
+				Scanner sc2 = new Scanner(System.in);
+				int age = sc2.nextInt();
+				employee1 = new Admin();
+				employee1.insertname(name);
+				employee1.insertAge(age);
+				Admin.admin.add(employee1);
+				employee1.disp();
+
+				break;
+			}
+			case 2: {
+				System.out.println("please enter name and age");
+				Scanner sc1 = new Scanner(System.in);
+				String name = sc1.nextLine();
+
+				Scanner sc2 = new Scanner(System.in);
+				int age = sc2.nextInt();
+
+				employee2.insertname(name);
+				employee2.insertAge(age);
+				Developer.developer.add(employee2);
+
+				break;
+			}
+			case 3: {
+
+				return;
+
+			}
+			}
+		}
+	}
+}
