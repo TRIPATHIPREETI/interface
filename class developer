@@ -1,0 +1,20 @@
+package employees;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class Developer implements Employee {
+	String name;
+	int age;
+	
+	static List<Developer> developer=new LinkedList<Developer>();	
+	@Override
+	public void insertname(String s) {
+		name=s;
+	}
+
+	@Override
+	public void insertAge(int a) {
+		age= a;
+	}
+}
