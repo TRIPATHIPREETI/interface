@@ -6,15 +6,23 @@ import java.util.List;
 public class Developer implements Employee {
 	String name;
 	int age;
-	
-	static List<Developer> developer=new LinkedList<Developer>();	
+
+	static List<Developer> developer = new LinkedList<Developer>();
+
 	@Override
 	public void insertname(String s) {
-		name=s;
+		name = s;
 	}
 
 	@Override
 	public void insertAge(int a) {
-		age= a;
+		age = a;
+	}
+
+	static void disp() {
+		for (Developer developer2 : developer) {
+			System.out.println("Name:" + developer2.name + "     Age:"
+					+ developer2.age);
+		}
 	}
 }
