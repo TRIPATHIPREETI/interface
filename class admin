@@ -3,30 +3,68 @@ package employees;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Admin implements Employee{
-	
-		String name;
-		int age;
-		
-		static List<Admin> admin=new LinkedList<Admin>();
-		
-		//definition
-		@Override
-		public void insertname(String s) {
+public class Admin implements Employee {
 
-			name=s;
-			
-		}
-		@Override
-		public void insertAge(int a)
-		{
+	String name;
+	int age;
 
-			age=a;
+	static List<Admin> admin = new LinkedList<Admin>();
+
+	// definition
+	@Override
+	public void insertname(String s) {
+
+		name = s;
+
+	}
+
+	@Override
+	public void insertAge(int a) {
+		age = a;
+	}
+
+	static void disp() {
+		for (Admin admin2 : admin) {
+			System.out
+					.println("Name:" + admin2.name + "     Age:" + admin2.age);
 		}
-		public void disp(){
-			for (Admin admin2 : admin) {
-				System.out.println("Name:"+admin2.name+"     Age:"+admin2.age);
+	}
+
+	static void sortName() {
+		for (int i = 0; i < admin.size() - 1; i++) {
+			for (int j = i + 1; j < admin.size(); j++) {
+				if ((admin.get(i).name)
+						.compareToIgnoreCase((admin.get(j)).name) > 0) {
+					String str = admin.get(i).name;
+					admin.get(i).name = admin.get(j).name;
+					admin.get(j).name = str;
+
+					int a = admin.get(i).age;
+					admin.get(i).age = admin.get(j).age;
+					admin.get(j).age = a;
+
+				}
 			}
 		}
+		disp();
+	}
 
-	}	
+	static void sortAge() {
+		for (int i = 0; i < admin.size() - 1; i++) {
+			for (int j = i + 1; j < admin.size(); j++) {
+				if ((admin.get(i).age) > ((admin.get(j)).age)) {
+					String str = admin.get(i).name;
+					admin.get(i).name = admin.get(j).name;
+					admin.get(j).name = str;
+
+					int a = admin.get(i).age;
+					admin.get(i).age = admin.get(j).age;
+					admin.get(j).age = a;
+
+				}
+			}
+		}
+		disp();
+	}
+}
+
